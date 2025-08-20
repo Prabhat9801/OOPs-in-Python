@@ -1,13 +1,15 @@
-lst = [1,2,3]
-my_str = 'MLOPs playlist'
-my_int = 42
+# lst = [1,2,3]
+# my_str = 'MLOPs playlist'
+# my_int = 42
 
-print(type(lst))
-print(type(my_str))
-print(type(my_int))
+# print(type(lst))
+# print(type(my_str))
+# print(type(my_int))
 
-print(lst)
+# print(lst)
 
 
-lst.clear()  # This will clear the list
-print(lst)
+# lst.clear()  
+# print(lst)\
+from OOPS_proj import chatbook
+user1 = chatbook()
