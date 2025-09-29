@@ -6,6 +6,7 @@ class Customer:
     
     def edit_profile(self, new_name, new_city, new_pin, new_state):
         self.name = new_name
+        # Aggregation - using Address class inside Customer class
         self.address.change_address(new_city, new_pin, new_state)
 
 class Address:
