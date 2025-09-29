@@ -1,8 +1,24 @@
 class Atm:
+# static/class variable - for shared property
+    __counter = 1
+#magic/special/dunder method
     def __init__(self):
         self.__pin = ''
         self.__balance = 0
+        self.sno = Atm.counter
+        Atm.__counter += 1
         self.menu()
+    @staticmethod
+    def get_counter(self):
+        return Atm.__counter
+    
+    @staticmethod
+    def set_counter(new_counter):
+        if type(new_counter)==int and new_counter>0:
+            Atm.__counter = new_counter
+            print("Counter updated successfully")
+        else:
+            print("Counter should be a positive integer")
 
     def get_pin(self):
         return self.__pin
