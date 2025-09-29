@@ -1,7 +1,7 @@
 # intiate the class
 
 class employee:
-    #Special function / Method . magic method / dunder method
+    #Special function / Method . magic method / dunder method - constructor
     def __init__(self):
         print("Started executing at attributes/data")
         self.id = 173

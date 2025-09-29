@@ -1,8 +1,20 @@
 class Atm:
     def __init__(self):
-        self.pin = ''
-        self.balance = 0
+        self.__pin = ''
+        self.__balance = 0
         self.menu()
+
+    def get_pin(self):
+        return self.__pin
+    
+    def set_pin(self, new_pin):
+        if type(new_pin)==str:
+            self.__pin = new_pin
+            print("Pin updated successfully")
+        else:
+            print("Pin should be a string")
+
+
     def menu(self):
         user_input = input("""
         Hello, how would you like to proceed?
@@ -23,24 +35,24 @@ class Atm:
         elif user_input == '5':
             self.exit()
     def create_pin(self):
-        self.pin = input("Enter your pin: ")
+        self.__pin = input("Enter your pin: ")
         print("Pin created successfully")
 
     def deposite(self):
         temp = input("Enter your pin: ")
-        if temp == self.pin:
+        if temp == self.__pin:
             amount = int(input("Enter amount to deposit: "))
-            self.balance += amount
+            self.__balance += amount
             print("Amount deposited successfully")
         else:
             print("Incorrect pin")
 
     def withdraw(self):
         temp = input("Enter your pin: ")
-        if temp == self.pin:
+        if temp == self.__pin:
             amount = int(input("Enter amount to withdraw: "))
-            if amount <= self.balance:
-                self.balance -= amount
+            if amount <= self.__balance:
+                self.__balance -= amount
                 print("Amount withdrawn successfully")
             else:
                 print("Insufficient balance")
@@ -49,8 +61,8 @@ class Atm:
 
     def check_balance(self):
         temp = input("Enter your pin: ")
-        if temp == self.pin:
-            print(f"Your balance is {self.balance}")
+        if temp == self.__pin:
+            print(f"Your balance is {self.__balance}")
         else:
             print("Incorrect pin")
 
